@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+
+<div class="center">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for msg in messages %}
+         <i style="padding-left:20px;"> {{msg}}</i>
+
+      {% endfor %}
+        <div class="txt_field">
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <span></span>
+
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <span></span>
+            <br>
+<br>
+         <a href="view">   <input type="submit" value="Login"></a>
+
+        </div>
+        <div class="register">
+            Not a member?<a href="register">Register</a>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

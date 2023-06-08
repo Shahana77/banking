@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <html>
+  <head>
+    <meta charset="utf-8">
+
+<!--    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript"
+src="http://code.jquery.com/jquery-1.11.0.js">
+</script>
+<script type="text/javascript">
+    //<![CDATA[
+    $(function () {
+        var $cat = $("#country"),
+            $state = $(".state");
+        var optgroups = {};
+        $state.each(function (i, v) {
+            var $e = $(v);
+            var _id = $e.attr("id");
+            optgroups[_id] = {};
+            $e.find("optgroup").each(function () {
+                var _r = $(this).data("rel");
+                $(this).find("option").addClass("is-dyn");
+                optgroups[_id][_r] = $(this).html();
+            });
+        });
+        $state.find("optgroup").remove();
+
+        var _lastRel;
+        $cat.on("change", function () {
+            var _rel = $(this).val();
+            if (_lastRel === _rel) return true;
+            _lastRel = _rel;
+            $state.find("option").attr("style", "");
+            $state.val("");
+            $state.find(".is-dyn").remove();
+            if (!_rel) return $state.prop("disabled", true);
+            $state.each(function () {
+                var $el = $(this);
+                var _id = $el.attr("id");
+                $el.append(optgroups[_id][_rel]);
+            });
+            $state.prop("disabled", false);
+        });
+    });
+    //]]>
+</script>
+
+
+
+
+  </head>
+  <body>
+    <!-- Body of Form starts -->
+  	<div class="container">
+      <center><u><h1 style="font-family:georgia;padding-top:40px;">Application Form</h1></u></center><br><br>
+		<form method="post">
+          {% csrf_token %}
+
+
+           <div class="form-group row">
+    <label for="inputname" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputname" placeholder="Enter your name" required>
+    </div>
+  </div>
+
+           <div class="form-group row">
+    <label for="inputdob" class="col-sm-2 col-form-label">Date Of Birth:</label>
+    <div class="col-sm-3">
+      <input type="date" class="form-control" id="inputdob" placeholder="Enter your DOB" required>
+    </div>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+    <label for="inputage" class="col-sm-2 col-form-label">Age:</label>
+    <div class="col-md-3" style="padding-left:10px;">
+      <input type="number" class="form-control" id="inputage" placeholder="Enter your age" required>
+    </div>
+  </div>
+
+
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
+      <div class="col-sm-10">
+        <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" required>
+  <label class="custom-control-label" for="customRadioInline1">Male</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">Female</label>
+</div>
+      </div>
+    </div>
+  </fieldset>
+
+
+
+         <div class="form-group row">
+    <label for="inputph" class="col-sm-2 col-form-label">Phone Number:</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="inputph" placeholder="Enter your phone number" required>
+    </div>
+  </div>
+
+
+
+          <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your email" required>
+    </div>
+  </div>
+
+
+          <div class="form-group row">
+    <label for="inputadd" class="col-sm-2 col-form-label">Address:</label>
+    <div class="col-sm-10">
+      <textarea type="email" class="form-control" id="inputadd" placeholder="Enter your address" required></textarea>
+    </div>
+  </div>
+
+
+
+<div class="form-group row">
+            <label  class="col-sm-2 col-form-label" style="padding:20px;">Select Distict:</label>
+  <div class="col-sm-3" style="padding:20px;">
+
+            <select name="country" id="country" style="width: 70%;
+    height: 40px;
+     padding: 1px 0px 0px 10px;">
+<!--                <option value="">Select Distict</option>-->
+                <option value="India">Thrissur</option>
+                <option value="USA">Ernamkulam</option>
+                <option value="Canada">Trivandrum</option>
+                <option value="France">Calicut</option>
+                <option value="France">Palakkad</option>
+
+            </select>  </div>    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<!--        </div>-->
+<!--        <div class="form">-->
+            <label class="col-sm-2 col-form-label" style="padding:20px;">Select Branch:</label>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div class="col-sm-3" style="padding:20px;">
+            <select disabled="disabled" class="state" id="state" name="state" style="width: 70%;
+    height: 40px;
+
+   padding: 1px 0px 0px 10px;">
+                <option value>Select Branch</option>
+                <!-- Home Ware -->
+                <optgroup data-rel="India">
+                    <option value="New-Delhi">Chalakkudy</option>
+                    <option value="Hyderabad">Koratty</option>
+                    <option value="Kolkata">Shornur</option>
+                </optgroup>
+                <!-- Education -->
+                <optgroup data-rel="USA">
+                    <option value="Alabama">Aluva</option>
+                    <option value="Arizona">Angamali</option>
+                    <option value="Arkansas">Kochi</option>
+                    <option value="Kansas">Kakkand</option>
+                </optgroup>
+                <optgroup data-rel="Canada">
+                    <option value="Alberta">Neyyatinkara</option>
+                    <option value="British-Columbia">Varkala</option>
+                    <option value="Manitoba">Kattakada</option>
+                </optgroup>
+                <optgroup data-rel="France">
+                    <option value="Auvergne">Vadakara</option>
+                    <option value="Bretagne">Perambra</option>
+                    <option value="Corse">Balusseri</option>
+                </optgroup>
+                <optgroup data-rel="France">
+                    <option value="Auvergne">Ottappalam</option>
+                    <option value="Bretagne">Alathur</option>
+                </optgroup>
+            </select>
+    </div></div>
+
+
+          <div class="form-group row">
+      <label for="inputState" class="col-sm-2 col-form-label">Account Type:</label>
+            <div class="col-md-3">
+      <select id="inputState" class="form-control">
+        <option selected>Savings Account</option>
+        <option>Current Account</option>
+        <option>Joint Account</option>
+        <option>Fixed Deposit Account</option>
+      </select>
+    </div>
+          </div>
+
+
+
+  <div class="form-group row">
+    <div class="col-sm-2">Material Provide:</div>
+    <div class="col-sm-10">
+      <div class="form-check mb-3 mr-sm-3">
+    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+    <label class="form-check-label" for="inlineFormCheck">
+      Credit Card
+    </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<!--  </div>-->
+<!--      <div class="form-check mb-2 mr-sm-2">-->
+    <input class="form-check-input" type="checkbox" id="inlineFormsCheck">
+    <label class="form-check-label" for="inlineFormCheck">
+      Debit Card
+    </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input class="form-check-input" type="checkbox" id="inlineFormsCheck1">
+    <label class="form-check-label" for="inlineFormCheck">
+      Cheque Book</label>
+
+  </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+           <a class="btn btn-primary" href="application">Application Form</a>
+
+
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <a href="cred/logout">   <button type="submit" class="btn btn-info" style="width:100px;">Logout</button></a>
+
+    </div>
+  </div>
+
+</form>
+
+
+
+  </div>
+
+  </body>
+</html>
+

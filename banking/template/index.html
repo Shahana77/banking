@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>HIBC Bank</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicon -->
+  <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900' %}" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <!-- Page Content
+    ================================================== -->
+  <!-- Hero -->
+
+  <section class="hero">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h3> <a class="hero-brand" href="index.html" title="Home"><img alt="hibc Logo" src="{% static 'img/logg.png' %}" ></a></h3>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <h1>
+           Internet Banking
+          </h1>
+
+        <p class="tagline">
+          Internet Banking brings banking to your fingertips. You can access your bank account and perform all banking operations online, at your own convenience, from anywhere.
+        </p>
+        <a class="btn btn-full" href="cred/login">Login</a>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Hero -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+         <a href="index.html"><img src="{% static 'img/logg.png' %}" alt="" title="" /></img></a>
+        <!-- Uncomment below if you prefer to use a text image -->
+        <!--<h1><a href="#hero">Bell</a></h1>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="cred/login/view">About Us</a></li>
+          <li><a href="cred/login">Login</a></li>
+          <li><a href="cred/login/register">Register</a></li>
+          <li class="menu-has-children"><a href="">Branches</a>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Thrissur</a></li>
+              <li class="menu-has-children"><a href="">Ernamkulam</a>
+                <ul>
+                  <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Kochi</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Kakkanad</a></li>
+
+                </ul>
+              </li>
+              <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Trivandrum</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Calicut</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/HDFC_Bank">Palakkad</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+
+      <nav class="nav social-nav pull-right d-none d-lg-inline">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+      </nav>
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!-- About -->
+
+  <section class="about" id="about">
+    <div class="container text-center">
+      <h2>
+          About Our Bank
+        </h2>
+
+      <p>
+        HIBC Bank Internet Banking is simple, convenient, 100% secure, and lets you carry out a wide range of banking transactions and access numerous Net Banking features in just a few clicks. Now, say goodbye to long queues and unwanted delays. With HIBC Bank, Net Banking instantly unlocks a better lifestyle anytime and anywhere.
+      </p>
+
+      <div class="row stats-row">
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">7032</span> Satisfied Customers
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">6879</span> Acive accounts
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">1,463</span> Hours Of Support
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">2035</span> Fixed Deposits
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /About -->
+  <!-- Parallax -->
+
+  <div class="block bg-primary block-pd-lg block-bg-overlay " data-bg-img="{% static 'img/parallax-bg.jpg' %}"  data-settings='{"stellar-background-ratio": 0.1}' data-toggle="parallax-bg">
+    <h2>
+       Services Offered By HIBC Bank
+      </h2>
+
+    <p>
+      Banks offer services to individuals, corporations, and other businesses. Some of the common services are checking accounts, savings accounts, credit cards, ATM machines, loans, and certificates of deposit. Some banks also provide capital market advisory services, such as mergers and acquisition advisory, trading advisory services, and underwriting services. Banks may differ in the type and number of services they provide to customers.
+   <b>Our services:
+    Advancements of loans,
+Cheque payments,
+Discounting on bills of exchange,
+Collecting and paying the credit instruments,
+Guarantee by banks,
+Consultancy,
+Credit cards,
+Funds remittance,
+Debit cards.</b>
+    </p>
+
+    <h4><b>When opening a Bank Account online:</b></h4><ul>
+   <b>Step 1:</b>Visit the Bank's  website and click on the ‘New User’ tab on the top right corner.
+     <br><b>Step 2:</b>Complete the Registration with your personal details.
+       <br><b>Step 3:</b>registration is done you can Login using Your ID and Password.
+  </ul>
+
+
+
+  </div>
+  <!-- /Parallax -->
+  <!-- Features -->
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="text-center">
+          Features
+        </h2>
+
+      <div class="row">
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-lock"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Security
+                </h3>
+
+              <p>
+               we now enable users to set their own transaction limits and experience an added level of security.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-money"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Simplified Transaction Process
+                </h3>
+
+              <p> simplified process of transaction without a separate transaction password.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-laptop"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Personalisation
+                </h3>
+
+              <p>
+                The new version offers a customizable dashboard with drag & drop functionality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+  </section>
+  <!-- /Features -->
+  <!-- Call to Action -->
+
+
+
+
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              © HIBC
+            </p>
+             <div class="credits">
+
+             Designed by <a href="https://bootstrapmade.com/">HIBC</a>
+            </div>
+          </div>
+
+
+<div class="col-xl-4 footer_contact_col">
+							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+
+								<div class="footer_contact_list">
+
+
+              <i class="fa fa-map-marker"></i>
+              A108 Adam Street New York, NY 535022<br>
+
+
+
+              <i class="fa fa-envelope"></i>
+              info@example.com
+
+
+
+              <i class="fa fa-phone"></i>
+              +1 5589 55488 55
+
+
+								</div>
+							</div>
+                            </div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+  </footer>
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+  <!-- Required JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/tether/js/tether.min.js' %}"></script>
+  <script src="{% static 'lib/stellar/stellar.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.js' %}"></script>
+  <script src="{% static 'lib/stickyjs/sticky.js' %}"></script>
+  <script src="{% static 'lib/parallax/parallax.js' %}"></script>
+  <script src="{% static 'lib/lockfixed/lockfixed.min.js' %}"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  <script src="{% static 'contactform/contactform.js' %}"></script>
+
+
+</body>
+</html>
